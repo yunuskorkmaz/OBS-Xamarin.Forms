@@ -2,7 +2,7 @@
 
 namespace OBS.Models
 {
-    public class ResultData
+    public class ResultData<T>
     {
         [JsonProperty("Result")]
         public bool Result { get; set; }

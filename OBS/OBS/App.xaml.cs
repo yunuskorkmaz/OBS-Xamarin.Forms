@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OBS.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ namespace OBS
 {
     public partial class App : Application
     {
+        public static Student User { get; set; } = null;
         public App()
         {
             InitializeComponent();
