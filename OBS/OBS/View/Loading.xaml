@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OBS.View.Loading">
+  <ContentView.Content>
+        <StackLayout IsVisible="True"
+                     BackgroundColor="#22222240"
+                     VerticalOptions="FillAndExpand"
+                     HorizontalOptions="FillAndExpand">
+            <StackLayout BackgroundColor="White"
+                         VerticalOptions="CenterAndExpand"
+                         HorizontalOptions="FillAndExpand"
+                         Margin="15,0,15,20">
+                <ActivityIndicator IsRunning="True"
+                                   Margin="0,15,0,0" />
+                <Label Margin="0,0,0,15"
+                       HorizontalTextAlignment="Center"
+                       Text="Veriler Yükleniyor"></Label>
+            </StackLayout>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

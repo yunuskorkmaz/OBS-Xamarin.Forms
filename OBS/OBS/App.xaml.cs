@@ -1,4 +1,6 @@
 ﻿using OBS.Models;
+using OBS.Pages;
+using OBS.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +17,20 @@ namespace OBS
         {
             InitializeComponent();
 
-            MainPage = new OBS.MainPage();
+            var studentService = new StudentService();
+
+            if (studentService.CheckSession())
+            {
+                MainPage = new ContentPage() { Content = new View.LoginIsSession() };
+            }
+            else
+            {
+                MainPage =  new LoginPage() { };
+            }
+
+
+
+
         }
 
         protected override void OnStart()

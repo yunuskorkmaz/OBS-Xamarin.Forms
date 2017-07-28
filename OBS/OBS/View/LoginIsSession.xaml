@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OBS.View.LoginIsSession">
+    <ContentView.Content>
+        <Grid>
+            <StackLayout VerticalOptions="FillAndExpand"
+                         HorizontalOptions="FillAndExpand">
+                <Image x:Name="bgImage"></Image>
+            </StackLayout>
+
+
+            <Grid>
+                <StackLayout BackgroundColor="#77FFFFFF"
+                             Padding="0,80,0,0">
+
+                    <StackLayout VerticalOptions="StartAndExpand"
+                                 HorizontalOptions="FillAndExpand">
+
+                        <StackLayout>
+                            <Image HeightRequest="100"
+                                   WidthRequest="100"
+                                   Source="meulogo.png"></Image>
+                        </StackLayout>
+                        <StackLayout>
+                            <Label HorizontalTextAlignment="Center"
+                                   FontSize="30"
+                                   TextColor="#083F88"
+                                   Text="Mersin Üniversitesi"></Label>
+                        </StackLayout>
+                        <StackLayout>
+                            <Label HorizontalTextAlignment="Center"
+                                   FontSize="21"
+                                   TextColor="#FFF68B29"
+                                   Text="Öğrenci İşleri Bilgi Sistemi"></Label>
+                        </StackLayout>
+
+
+                        <StackLayout Padding="40,10,40,20">
+
+                            <StackLayout>
+                                <Button x:Name="btnGirisYap"
+                                        TextColor="White"
+                                        BackgroundColor="#FFF68B29"></Button>
+                                <Button x:Name="btnNotHesapla"
+                                        TextColor="White"
+                                        BackgroundColor="#FFF68B29"
+                                        Text="Not Hesapla"></Button>
+                            </StackLayout>
+
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout VerticalOptions="End"
+                                 Padding="0,0,0,15">
+                        <Label TextColor="#555555"
+                               HorizontalTextAlignment="Center"
+                               Text="Created : Yunus Korkmaz"></Label>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+
+        </Grid>
+    </ContentView.Content>
+</ContentView>
