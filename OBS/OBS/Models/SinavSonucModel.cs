@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using SQLite.Net.Attributes;
 using System;
 using Xamarin.Forms;
 
@@ -29,6 +30,7 @@ namespace OBS.Models
         [JsonProperty("Success")]
         public bool Success { get; set; } = false;
 
+        
         public Color DevamSartRenk
         {
             get
@@ -38,6 +40,7 @@ namespace OBS.Models
             }
         }
 
+        
         public Color SonucRenk
         {
             get

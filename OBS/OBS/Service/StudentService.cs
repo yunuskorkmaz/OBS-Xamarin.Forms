@@ -1,6 +1,7 @@
 ﻿using OBS.API;
 using OBS.Interface;
 using OBS.Models;
+using OBS.Pages;
 using SQLite.Net;
 using System;
 using System.Collections.Generic;
@@ -56,5 +57,13 @@ namespace OBS.Service
 
         }
 
+        public void Logout()
+        {
+            _sqlconnection.DeleteAll<Student>();
+            App.User = null;
+            Application.Current.MainPage = new LoginPage();
+
+            
+        }
     }
 }

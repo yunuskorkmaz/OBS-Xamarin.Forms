@@ -10,10 +10,11 @@ namespace OBS.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginIsSession : ContentView
     {
+        
         public LoginIsSession()
         {
             InitializeComponent();
-
+            bgImage.Source = ImageSource.FromFile("back.png");
             var studentManager = new StudentService();
             studentManager.GetUser();
 
@@ -22,6 +23,11 @@ namespace OBS.View
             btnGirisYap.Clicked += delegate
             {
                 Application.Current.MainPage = new NavigationPage(new AppMainPage());
+            };
+
+            btnGoDiffUser.Clicked += delegate
+            {
+                studentManager.Logout();
             };
         }
     }

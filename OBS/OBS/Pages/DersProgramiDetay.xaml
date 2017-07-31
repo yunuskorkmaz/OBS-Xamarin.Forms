@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OBS.Pages.DersProgramiDetay">
+    <ContentPage.Content>
+        <ListView x:Name="lstProgram"
+                  HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="7">
+
+                            <StackLayout BackgroundColor="#063473"
+                                         Orientation="Horizontal"
+                                         Padding="20,3,20,3">
+                                <Label VerticalTextAlignment="Center"
+                                       TextColor="#9999FF"
+                                       Text="{Binding Kodu}"></Label>
+                                <Label  TextColor="White"
+                                        Font="16"
+                                        Text="{Binding DersAdi}"></Label>
+                            </StackLayout>
+                            <StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="graduate.png"></Image>
+                                    <Label Text="{Binding Hoca}"></Label>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="saat.png"></Image>
+                                    <Label Text="{Binding Saat}"></Label>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="placeholder.png"></Image>
+                                    <Label Text="{Binding Derslik}"></Label>
+                                </StackLayout>
+
+                            </StackLayout>
+
+
+
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

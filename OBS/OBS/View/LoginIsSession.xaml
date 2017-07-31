@@ -42,6 +42,10 @@
                                 <Button x:Name="btnGirisYap"
                                         TextColor="White"
                                         BackgroundColor="#FFF68B29"></Button>
+                                <Button x:Name="btnGoDiffUser"
+                                        TextColor="White"
+                                        BackgroundColor="#FFF68B29"
+                                        Text="Farklı Kullanıcı Girişi"></Button>
                                 <Button x:Name="btnNotHesapla"
                                         TextColor="White"
                                         BackgroundColor="#FFF68B29"

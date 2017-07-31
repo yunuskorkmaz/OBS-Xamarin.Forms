@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:OBS.View;assembly=OBS"
+             x:Class="OBS.Pages.SinavSonuclari">
+    <ContentPage.Content>
+        <Grid>
+            <ListView x:Name="lstSinavSonuc"
+                      HasUnevenRows="True">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout  Padding="0,7,0,7">
+                                <StackLayout BackgroundColor="#063473"
+                                             Orientation="Horizontal"
+                                             Padding="20,3,20,3">
+                                    <StackLayout>
+                                        <Label VerticalTextAlignment="Center"
+                                               TextColor="#9999FF"
+                                               Text="{Binding DersKodu}"></Label>
+                                    </StackLayout>
+                                    <StackLayout>
+                                        <Label  TextColor="White"
+                                                Font="16"
+                                                Text="{Binding DersAdi}"></Label>
+                                    </StackLayout>
+
+
+                                </StackLayout>
+                                <StackLayout Padding="20,0,20,0">
+                                    <Label Text="{Binding Ogretmen}"></Label>
+                                </StackLayout>
+                                <StackLayout Padding="20,0,20,0">
+                                    <Label TextColor="{Binding DevamSartRenk}"
+                                           Text="{Binding DevamSartiText}"></Label>
+                                </StackLayout>
+                                <StackLayout HorizontalOptions="Center"
+                                             Padding="20,0,20,0">
+                                    <Grid Grid.RowSpacing="0"
+                                          Grid.ColumnSpacing="10">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="20*" />
+                                            <ColumnDefinition Width="20*" />
+                                            <ColumnDefinition Width="30*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+
+                                        <Label HorizontalTextAlignment="Center"
+                                               VerticalTextAlignment="Center"
+                                               Grid.Column="1"
+                                               Text="{Binding Vize.Adi}"></Label>
+                                        <Label HorizontalTextAlignment="Center"
+                                               VerticalTextAlignment="Center"
+                                               Grid.Column="2"
+                                               Text="{Binding Final.Adi}"></Label>
+
+
+                                        <Label VerticalTextAlignment="Center"
+                                               Grid.Column="0"
+                                               Grid.Row="1"
+                                               Text="Ders Notu" />
+                                        <Label VerticalTextAlignment="Center"
+                                               Grid.Column="0"
+                                               Grid.Row="2"
+                                               Text="Sınıf Ort." />
+
+                                        <Label HorizontalTextAlignment="Center"
+                                               VerticalTextAlignment="Center"
+                                               Grid.Column="1"
+                                               Grid.Row="1"
+                                               FontSize="17"
+                                               TextColor="#063473"
+                                               Text="{Binding Vize.Not}"></Label>
+                                        <Label HorizontalTextAlignment="Center"
+                                               VerticalTextAlignment="Center"
+                                               Grid.Column="2"
+                                               Grid.Row="1"
+                                               FontSize="17"
+                                               TextColor="#063473"
+                                               Text="{Binding Final.Not}"></Label>
+
+                                        <Label HorizontalTextAlignment="Center"
+                                               VerticalTextAlignment="Center"
+                                               Grid.Column="1"
+                                               Grid.Row="2"
+                                               FontSize="15"
+                                               Text="{Binding Vize.Ortalama}"></Label>
+                                        <Label HorizontalTextAlignment="Center"
+                                               VerticalTextAlignment="Center"
+                                               Grid.Column="2"
+                                               Grid.Row="2"
+                                               FontSize="15"
+                                               Text="{Binding Final.Ortalama}"></Label>
+                                    </Grid>
+                                </StackLayout>
+
+
+                                <StackLayout BackgroundColor="#E0E0EB"
+                                             Orientation="Horizontal"
+                                             Padding="16,4,16,4">
+                                    <StackLayout>
+                                        <Label  VerticalTextAlignment="Center"
+                                                TextColor="Black"
+                                                Text="Sonuç "></Label>
+                                    </StackLayout>
+
+                                    <StackLayout>
+                                        <Label  VerticalTextAlignment="Center"
+                                                TextColor="{Binding SonucRenk}"
+                                                Text="{Binding Sonuc}"></Label>
+                                    </StackLayout>
+
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <views:Loading x:Name="LoadingPage"></views:Loading>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

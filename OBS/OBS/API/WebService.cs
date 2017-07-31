@@ -117,6 +117,55 @@ namespace OBS.API
             return result;
         }
 
+        public async Task<ResultData<string>> Sinavlar(YariYilDonem Donem)
+        {
+            ResultData<string> result;
+            if (CheckConnection() == false)
+            {
+                result = new ResultData<string>()
+                {
+                    Message = "İnternet Bağlantısı Gerekli",
+                    Result = false,
+                    Data = null
+                };
+                return result;
+            }
+
+            string url = "http://meuoibs.16mb.com/sinavsonuclari.php?a=" + App.User.OgrenciNo + "&b=" + App.User.Sifre + "&c=" + Donem.ID;
+            HttpClient client = await getClient();
+            var response = await client.GetStringAsync(url);
+
+
+            try
+            {
+                result = new ResultData<string>();
+                var model = JsonConvert.DeserializeObject<List<SinavSonucModel>>(response);
+                if (model.Count > 0)
+                {
+                    result.Message = "Başarılı";
+                    result.Result = true;
+                    result.Data = response;
+                }
+                else
+                {
+                    result.Message = "Hata Oluştu";
+                    result.Result = false;
+                }
+            }
+            catch (Exception)
+            {
+                result = new ResultData<string>()
+                {
+                    Message = "Bir Hata Oluştu Tekrar Deneyiniz.",
+                    Result = false,
+                    Data = null
+                };
+
+            }
+
+            return result;
+        }
+
         public async Task<ResultData<List<SinavSonucModel>>> SinavSonuclari(YariYilDonem Donem)
         {
             ResultData<List<SinavSonucModel>> result;
@@ -166,12 +215,12 @@ namespace OBS.API
             return result;
         }
 
-        public async Task<ResultData<List<ProgramModel>>> DersProgrami()
+        public async Task<ResultData<string>> DersProgrami()
         {
-            var result = new ResultData<List<ProgramModel>>();
+            var result = new ResultData<string>();
             if (CheckConnection() == false)
             {
-                result = new ResultData<List<ProgramModel>>()
+                result = new ResultData<string>()
                 {
                     Message = "İnternet Bağlantısı Gerekli",
                     Result = false,
@@ -179,25 +228,15 @@ namespace OBS.API
                 };
                 return result;
             }
-
-
-
-
-
-
-
             string url = "http://meuoibs.16mb.com/dersprogrami.php?a=" + App.User.OgrenciNo + "&b=" + App.User.Sifre;
 
             HttpClient client = await getClient();
             var response = await client.GetStringAsync(url);
-
-
             try
             {
-                var model = JsonConvert.DeserializeObject<List<ProgramModel>>(response);
                 result.Result = true;
                 result.Message = "Başarılı";
-                result.Data = model;
+                result.Data = response;
             }
             catch (Exception e)
             {

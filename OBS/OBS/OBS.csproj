@@ -39,11 +39,14 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DBModels\DbProgram.cs" />
     <Compile Include="Interface\IConnect.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\BasariTakipModel.cs" />
+    <Compile Include="DBModels\DbSinavSonuc.cs" />
+    <Compile Include="DBModels\DbYariyil.cs" />
     <Compile Include="Models\DuyuruModel.cs" />
     <Compile Include="Models\OrtalamaItem.cs" />
     <Compile Include="Models\OrtalamaModel.cs" />
@@ -57,11 +60,24 @@
     <Compile Include="Pages\AppMainPage.xaml.cs">
       <DependentUpon>AppMainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\DersProgramiDetay.xaml.cs">
+      <DependentUpon>DersProgramiDetay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DersProgramiPage.cs" />
     <Compile Include="Pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\SinavSonuclari.xaml.cs">
+      <DependentUpon>SinavSonuclari.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\YariYillar.xaml.cs">
+      <DependentUpon>YariYillar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\ProgramService.cs" />
+    <Compile Include="Service\SinavSonucService.cs" />
     <Compile Include="Service\StudentService.cs" />
+    <Compile Include="Service\YariyilService.cs" />
     <Compile Include="View\Loading.xaml.cs">
       <DependentUpon>Loading.xaml</DependentUpon>
     </Compile>
@@ -146,6 +162,24 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\LoginPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\YariYillar.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\SinavSonuclari.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\DersProgramiDetay.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
